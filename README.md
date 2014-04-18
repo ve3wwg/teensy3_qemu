@@ -35,7 +35,7 @@ $ /usr/local/bin/qemu-system-arm -machine teensy-3.1 -nographic -monitor null -s
 GDB:
 ----
 
-$ arm-none-eabi-gdb --exec="myarmprog.elf" --se="myarmprog" --ex="target remote localhost:51234" --ex "load" -ex "b main"
+$ arm-none-eabi-gdb --exec="myarmprog.elf" --se="myarmprog.elf" --ex="target remote localhost:51234" --ex "load" -ex "b main"
 
 Startup remains tricky, in gdb you must:
 
