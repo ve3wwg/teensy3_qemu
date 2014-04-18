@@ -25,21 +25,17 @@ Fri Apr 18 09:32:44 2014
 
 Using the machine name 'teensy-3.1' you now get a ARM CPU with the
 static ram in the correct place (address 0x1FFF8000 for 64K). The
-CPU emulation is otherwise a Cortex-m3.
+CPU emulation otherwise remains a Cortex-m3.
 
 QEMU Command:
 -------------
 
-$ /usr/local/bin/qemu-system-arm -machine teensy-3.1 \
-    -nographic -monitor null -serial null -semihosting \
-    -kernel ./myarmprog.elf -gdb tcp::51234 -S
+$ /usr/local/bin/qemu-system-arm -machine teensy-3.1 -nographic -monitor null -serial null -semihosting -kernel ./myarmprog.elf -gdb tcp::51234 -S
 
 GDB:
 ----
 
-$ arm-none-eabi-gdb --exec="myarmprog.elf" --se="myarmprog" \
-    --ex="target remote localhost:51234" --ex "load" \
-    -ex "b main"
+$ arm-none-eabi-gdb --exec="myarmprog.elf" --se="myarmprog" --ex="target remote localhost:51234" --ex "load" -ex "b main"
 
 Startup remains tricky, in gdb you must:
 
