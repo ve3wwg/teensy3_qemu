@@ -1344,7 +1344,7 @@ static void teensy31_init(QEMUMachineInitArgs *args)
 }
 
 static QEMUMachine teensy31_machine = {
-    .name = "teensy-31",
+    .name = "teensy-3.1",
     .desc = "Teensy3 teensy-3.1",
     .init = teensy31_init,
 };
